@@ -8,14 +8,24 @@ import java.util.stream.Collectors;
 public class GenericCode {
     public static void main(String[] args) {
 
-        //    checkEvenOdd();
-        checkPrimeOrNot();
+        // checkEvenOdd();
+        // checkPrimeOrNot();
+        checkFactorial();
 
     }
 
+    private static void checkFactorial() {
+        int num = 7;
+        var fact = 1;
+        for (int i = num; i > 0; i--) {
+            fact *= i;
+        }
+        System.out.println(fact);
+    }
+
     private static void checkPrimeOrNot() {
-        List<Integer> num = List.of(2, 6, 10, 5,15,7,80);
-        List<Integer> prime= new ArrayList<>(List.copyOf(num));
+        List<Integer> num = List.of(2, 6, 10, 5, 15, 7, 80);
+        List<Integer> prime = new ArrayList<>(List.copyOf(num));
         for (int n : num) {
             for (int i = 2; i < n; i++) {
                 if (n % i == 0) {
