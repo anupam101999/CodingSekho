@@ -1,4 +1,4 @@
-package Java8;
+package Java8.Code;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -36,7 +36,7 @@ public class First01 {
                 .get();
         System.out.println(length);
 
-        //4. Find Occurrence of word
+        //5. Find Occurrence of word
         sen = "I am learning Java Streams API in Java";
         Map<String, Long> collect = Arrays.stream(sen.split(" "))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
