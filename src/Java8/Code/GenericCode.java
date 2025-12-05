@@ -10,8 +10,21 @@ public class GenericCode {
 
         // checkEvenOdd();
         // checkPrimeOrNot();
-        checkFactorial();
+        // checkFactorial();
+        checkPalindrome();
 
+    }
+
+    private static void checkPalindrome() {
+        var x = 12447421;
+        var strValue = String.valueOf(x);
+        var size = strValue.length();
+        for (int i = 0; i < size / 2; i++) {
+            if (strValue.charAt(i) != strValue.charAt(size - 1 - i)) {
+                System.out.println("Not Palindrome");
+                break;
+            }
+        }
     }
 
     private static void checkFactorial() {
