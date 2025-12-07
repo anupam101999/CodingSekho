@@ -1,0 +1,8 @@
+package EngineeringDigest.ThreadLifeCycle;
+
+public class B extends A implements Runnable{
+    @Override
+    public void run() {
+
+    }
+}
