@@ -19,7 +19,9 @@ public class Employees extends Emp{
     @Override
     public String toString() {
         return "Employees{" +
-                "dept='" + dept + '\'' +
+                "name='" + getName() + '\'' +
+                ", salary=" + getSalary() +
+                ", dept='" + dept + '\'' +
                 '}';
     }
 }

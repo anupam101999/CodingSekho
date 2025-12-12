@@ -4,10 +4,7 @@ import Java8.GenericClass.Emp;
 import Java8.GenericClass.Employees;
 import Java8.GenericClass.Person;
 
-import java.util.Comparator;
-import java.util.DoubleSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Third03 {
@@ -29,7 +26,7 @@ public class Third03 {
         //53. Find the dept which has maximum num of emp
         List<Employees> employeesList = List.of(new Employees(10000, "ANUPAM", "IT"),
                 new Employees(19000, "RAM", "CSE"),
-                new Employees(40000, "SAM", "ME"),
+                new Employees(40000, "RAM", "ME"),
                 new Employees(10300, "HA", "IT"),
                 new Employees(10800, "TISA", "IT"));
         System.out.println("53. Find the dept which has maximum num of emp------------------------");
@@ -42,6 +39,15 @@ public class Third03 {
         Map<String, Double> collect = employeesList.stream()
                 .collect(Collectors.groupingBy(Employees::getDept, Collectors.averagingDouble(Employees::getSalary)));
         collect.forEach((dept, sal) -> System.out.println("dept : " + dept + ", sal : " + sal));
+
+        //
+        Map<String, Double> ram = employeesList.stream().filter(n -> n.getName().equalsIgnoreCase("Ram"))
+                .collect(Collectors.groupingBy(Employees::getName, Collectors.averagingDouble(Employees::getSalary)));
+        System.out.println("------------"+ram.values());
+
+        double ram1 = employeesList.stream().filter(i -> i.getName().equalsIgnoreCase("Ram"))
+                .mapToLong(Employees::getSalary).average().getAsDouble();
+        System.out.println("-------------"+ram1);
 
         //My Ques , filter dept who works in IT and count of employee
         Map<String, DoubleSummaryStatistics> collect1 = employeesList.stream()
